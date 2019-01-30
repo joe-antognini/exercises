@@ -1,0 +1,73 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1704,         63]
+NotebookOptionsPosition[      1366,         46]
+NotebookOutlinePosition[      1702,         61]
+CellTagsIndexPosition[      1659,         58]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "24"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.611664387571558*^9, 3.611664400159123*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sort", "[", 
+   RowBox[{"FromDigits", "/@", 
+    RowBox[{"Permutations", "[", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", "9"}], "]"}], "]"}]}], "]"}], "[", 
+  RowBox[{"[", "1000000", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6116643523838053`*^9, 3.611664357848782*^9}}],
+
+Cell[BoxData["2783915460"], "Output",
+ CellChangeTimes->{3.6116643734011173`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{548, Automatic}, {0, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 365, 8, 69, "Input"],
+Cell[CellGroupData[{
+Cell[947, 32, 319, 8, 30, "Input"],
+Cell[1269, 42, 81, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

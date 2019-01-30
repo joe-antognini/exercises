@@ -1,0 +1,117 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3435,        108]
+NotebookOptionsPosition[      3052,         90]
+NotebookOutlinePosition[      3389,        105]
+CellTagsIndexPosition[      3346,        102]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "21"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"June", " ", "3", " ", "2013"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.579264812530298*^9, 3.5792648236137667`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"maxn", "=", "10000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tot", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"n", "=", "1"}], ",", 
+   RowBox[{"n", "<", "maxn"}], ",", 
+   RowBox[{"n", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"divis", "=", 
+     RowBox[{"Divisors", "[", "n", "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"sum", "=", 
+     RowBox[{"Total", "[", 
+      RowBox[{"divis", "[", 
+       RowBox[{"[", 
+        RowBox[{";;", 
+         RowBox[{"-", "2"}]}], "]"}], "]"}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"sum", "\[Equal]", "n"}], ",", 
+      RowBox[{"Continue", "[", "]"}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Total", "[", 
+        RowBox[{
+         RowBox[{"Divisors", "[", "sum", "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{";;", 
+           RowBox[{"-", "2"}]}], "]"}], "]"}], "]"}], "\[Equal]", "n"}], ",", 
+      
+      RowBox[{"tot", "+=", "n"}]}], "]"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", "tot", "]"}]}], "Input",
+ CellChangeTimes->{{3.5792648903021812`*^9, 3.579264963777183*^9}, {
+  3.579265000770898*^9, 3.579265042356639*^9}, {3.579265087107931*^9, 
+  3.579265297082506*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Divisors", "::", "argx"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"\[NoBreak]\\!\\(Divisors\\)\[NoBreak] called with \
+\[NoBreak]\\!\\(0\\)\[NoBreak] arguments; 1 argument is expected. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/argx\\\", \
+ButtonNote -> \\\"Divisors::argx\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.579265303629464*^9}],
+
+Cell[BoxData["31626"], "Print",
+ CellChangeTimes->{3.579265262307098*^9, 3.5792653039013643`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{255, Automatic}, {Automatic, 29}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 470, 10, 88, "Input"],
+Cell[CellGroupData[{
+Cell[1052, 34, 1382, 38, 164, "Input"],
+Cell[2437, 74, 499, 10, 24, "Message"],
+Cell[2939, 86, 97, 1, 23, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,121 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3297,        112]
+NotebookOptionsPosition[      2809,         90]
+NotebookOutlinePosition[      3146,        105]
+CellTagsIndexPosition[      3103,        102]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "1"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"December", " ", "12", " ", "2012"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.564310590387331*^9, 3.564310623387382*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"The", " ", "solution"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"divisTotal", "[", "n_", "]"}], ":=", 
+    RowBox[{"Total", "[", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"n", "-", "1"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Divisible", "[", 
+          RowBox[{"#", ",", "3"}], "]"}], "||", 
+         RowBox[{"Divisible", "[", 
+          RowBox[{"#", ",", "5"}], "]"}]}], "&"}]}], "]"}], "]"}]}], 
+   ";"}]}]], "Input",
+ CellChangeTimes->{{3.5643106842115*^9, 3.564310703662794*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Test", " ", "the", " ", "solution", " ", "for", " ", "the", " ", 
+    "example"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", " ", "=", " ", "10"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"divisTotal", "[", "n", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.564310631823944*^9, 3.564310664670389*^9}, {
+  3.5643107072284813`*^9, 3.5643107091950808`*^9}}],
+
+Cell[BoxData["23"], "Output",
+ CellChangeTimes->{3.564310667095693*^9, 3.564310710323633*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Compute", " ", "the", " ", 
+    RowBox[{"solution", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", " ", "=", " ", "1000"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"divisTotal", "[", "n", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.56431066856511*^9, 3.5643106750040283`*^9}, {
+  3.564310712555201*^9, 3.5643107154833727`*^9}}],
+
+Cell[BoxData["233168"], "Output",
+ CellChangeTimes->{3.564310716025358*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{268, Automatic}, {58, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 472, 10, 88, "Input"],
+Cell[1032, 32, 650, 19, 69, "Input"],
+Cell[CellGroupData[{
+Cell[1707, 55, 450, 11, 69, "Input"],
+Cell[2160, 68, 93, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2290, 74, 425, 10, 69, "Input"],
+Cell[2718, 86, 75, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

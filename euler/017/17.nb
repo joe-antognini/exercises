@@ -1,0 +1,391 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13841,        382]
+NotebookOptionsPosition[     13343,        360]
+NotebookOutlinePosition[     13679,        375]
+CellTagsIndexPosition[     13636,        372]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "17"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"February", " ", "19", " ", "2013"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.5703016436083384`*^9, 3.570301662191572*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Define", " ", "some", " ", "letter", " ", 
+     RowBox[{"counts", ".", "  ", "First"}], " ", "do", " ", "the", " ", 
+     "numbers", " ", "1"}], "-", "9"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"numLengthsLstOne", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "4"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"6", ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"7", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"8", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", "4"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Now", " ", "do", " ", "the", " ", "tens", " ", "10"}], "-", 
+     "90"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"numLengthsLstTen", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"6", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"7", ",", "7"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"8", ",", "6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"9", ",", "6"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "We", " ", "have", " ", "to", " ", "do", " ", "the", " ", "teens", " ", 
+     RowBox[{"separately", ".", "  ", "Everything"}], " ", "else", " ", "can",
+      " ", "be", " ", "built", " ", "up", " ", "from", " ", "the", " ", 
+     "ones", " ", "and", " ", 
+     RowBox[{"tens", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"teens", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0"}], "}"}], ",", "3"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "1"}], "}"}], ",", "6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "2"}], "}"}], ",", "6"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "3"}], "}"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "4"}], "}"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "5"}], "}"}], ",", "7"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "6"}], "}"}], ",", "7"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "7"}], "}"}], ",", "9"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "8"}], "}"}], ",", "8"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "9"}], "}"}], ",", "8"}], "}"}]}], "}"}]}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Turn", " ", "the", " ", "above", " ", "lists", " ", "into", " ", 
+     RowBox[{"functions", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"numLengthOne", "[", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "=", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "&"}], "/@", 
+     "numLengthsLstOne"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"numLengthTen", "[", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "=", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "&"}], "/@", 
+     "numLengthsLstTen"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"numLengthTeens", "[", 
+         RowBox[{"#", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "=", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ")"}], "&"}], "/@", "teens"}], 
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Now", " ", "we", " ", "work", " ", 
+      RowBox[{"backwards", ".", "  ", "Count"}], " ", "the", " ", "letters", 
+      " ", "in", " ", "a", " ", "single", " ", "digit", " ", "number"}], ",", 
+     " ", 
+     RowBox[{"two", " ", "digit", " ", "number"}], ",", " ", 
+     RowBox[{"etc", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"spellOutOnes", "[", "lst_", "]"}], ":=", 
+     RowBox[{"numLengthOne", "[", 
+      RowBox[{"lst", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Account", " ", "for", " ", "the", " ", "edge", " ", "case", " ", "of", 
+     " ", "the", " ", 
+     RowBox[{"teens", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"spellOutTen", "[", "lst_", "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[NotEqual]", "1"}], "&&", 
+        RowBox[{
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[NotEqual]", "0"}]}], ",", 
+       RowBox[{
+        RowBox[{"numLengthTen", "[", 
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "+", 
+        RowBox[{"spellOutOnes", "[", 
+         RowBox[{"lst", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ";;"}], "]"}], "]"}], "]"}]}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"lst", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "\[Equal]", "1"}], ",", 
+         RowBox[{"numLengthTeens", "[", "lst", "]"}], ",", 
+         RowBox[{"spellOutOnes", "[", 
+          RowBox[{"lst", "[", 
+           RowBox[{"[", 
+            RowBox[{"2", ";;"}], "]"}], "]"}], "]"}]}], "]"}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Account", " ", "for", " ", "the", " ", "edge", " ", "case", " ", "of", 
+     " ", "a", " ", "number", " ", "divisible", " ", "by", " ", 
+     RowBox[{"100", " ", "--"}], " ", 
+     RowBox[{"no", " ", "'"}], 
+     RowBox[{"and", "'"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"spellOutHundred", "[", "lst_", "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "\[NotEqual]", "0"}], "||", 
+        RowBox[{
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[NotEqual]", "0"}]}], ",", 
+       RowBox[{
+        RowBox[{"numLengthOne", "[", 
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "+", 
+        RowBox[{"spellOutTen", "[", 
+         RowBox[{"lst", "[", 
+          RowBox[{"[", 
+           RowBox[{"2", ";;"}], "]"}], "]"}], "]"}], "+", "10"}], ",", 
+       RowBox[{
+        RowBox[{"numLengthOne", "[", 
+         RowBox[{"lst", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "]"}], "+", "7"}]}], "]"}]}], ";"}],
+    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Determine", " ", "how", " ", "many", " ", "digits", " ", "the", " ", 
+     "number", " ", "has", " ", "and", " ", "choose", " ", "the", " ", 
+     "appropriate", " ", 
+     RowBox[{"function", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"spellOut", "[", "lst_", "]"}], ":=", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "[", "lst", "]"}], "\[Equal]", "4"}], ",", "11", ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Length", "[", "lst", "]"}], "\[Equal]", "3"}], ",", 
+        RowBox[{"spellOutHundred", "[", "lst", "]"}], ",", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Length", "[", "lst", "]"}], "\[Equal]", "2"}], ",", 
+          RowBox[{"spellOutTen", "[", "lst", "]"}], ",", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Length", "[", "lst", "]"}], "\[Equal]", "1"}], ",", 
+            RowBox[{"spellOutOnes", "[", "lst", "]"}]}], "]"}]}], "]"}]}], 
+       "]"}]}], "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "This", " ", "is", " ", "the", " ", "function", " ", "that", " ", "puts",
+       " ", "it", " ", "all", " ", 
+      RowBox[{"together", ".", "  ", "Split"}], " ", "each", " ", "number", 
+      " ", "up"}], ",", " ", 
+     RowBox[{"count", " ", "the", " ", "letters"}], ",", " ", 
+     RowBox[{"and", " ", "take", " ", "the", " ", 
+      RowBox[{"sum", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"numLetterCount", "[", "n_", "]"}], ":=", 
+     RowBox[{"Total", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"spellOut", "[", 
+          RowBox[{"IntegerDigits", "[", "#", "]"}], "]"}], ")"}], "&"}], "/@", 
+       RowBox[{"Range", "[", "n", "]"}]}], "]"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.5699608917340107`*^9, 3.56996089384684*^9}, {
+   3.5699614738392963`*^9, 3.569961480880218*^9}, {3.569961533870459*^9, 
+   3.5699615777802773`*^9}, {3.569961610100444*^9, 3.5699616529176493`*^9}, {
+   3.570218707719144*^9, 3.57021874852538*^9}, {3.5702188018636217`*^9, 
+   3.5702188449636307`*^9}, {3.570218934146288*^9, 3.570219076015287*^9}, {
+   3.5702191169907923`*^9, 3.5702191274623613`*^9}, {3.5702192419993753`*^9, 
+   3.570219339400771*^9}, {3.570300546523913*^9, 3.5703006873847933`*^9}, {
+   3.57030074938078*^9, 3.570300820549621*^9}, {3.570300901060691*^9, 
+   3.57030112198247*^9}, {3.5703011629739437`*^9, 3.5703012326353607`*^9}, {
+   3.570301270979478*^9, 3.5703013033925753`*^9}, 3.5703013372547703`*^9, 
+   3.570301407068961*^9, {3.570301437972636*^9, 3.570301541850809*^9}, {
+   3.570301579182639*^9, 3.570301618323182*^9}, {3.5703016647681217`*^9, 
+   3.570301872423826*^9}, {3.570302169796874*^9, 3.570302185568309*^9}, {
+   3.5703022933391457`*^9, 3.5703022945383472`*^9}, 3.570302334171857*^9, {
+   3.57030281191813*^9, 3.5703028129452133`*^9}, {3.5703029106037817`*^9, 
+   3.570302943603488*^9}, {3.570302974841432*^9, 3.570302984637885*^9}, {
+   3.570303100501598*^9, 3.5703031201292152`*^9}, {3.5703031974625483`*^9, 
+   3.570303197570022*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Test", " ", "case"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"numLetterCount", "[", "5", "]"}]}]], "Input",
+ CellChangeTimes->{{3.570301879872366*^9, 3.570301884644012*^9}}],
+
+Cell[BoxData["19"], "Output",
+ CellChangeTimes->{3.5703018850395308`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"The", " ", "answer"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"numLetterCount", "[", "1000", "]"}]}]], "Input",
+ CellChangeTimes->{{3.570301620532192*^9, 3.5703016333458223`*^9}, {
+  3.570301887504665*^9, 3.5703018913933783`*^9}}],
+
+Cell[BoxData["21124"], "Output",
+ CellChangeTimes->{{3.5703016289067163`*^9, 3.570301633858127*^9}, 
+   3.570301892024645*^9, 3.570302192712859*^9, 3.570302298667759*^9, 
+   3.570302337378088*^9, 3.57030320283897*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{233, Automatic}, {Automatic, 4}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 475, 10, 88, "Input"],
+Cell[1035, 32, 11399, 297, 810, "Input"],
+Cell[CellGroupData[{
+Cell[12459, 333, 239, 5, 50, "Input"],
+Cell[12701, 340, 73, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12811, 346, 296, 6, 50, "Input"],
+Cell[13110, 354, 217, 3, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

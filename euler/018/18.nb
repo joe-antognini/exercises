@@ -1,0 +1,182 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5731,        173]
+NotebookOptionsPosition[      5201,        150]
+NotebookOutlinePosition[      5538,        165]
+CellTagsIndexPosition[      5495,        162]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "18"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"March", " ", "11", " ", "2013"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.572023643211903*^9, 3.572023657953874*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", "\"\<~/cs/euler/mathematica\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"triangle", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<18.dat\>\"", ",", "\"\<Data\>\""}], "]"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.572024213342102*^9, 3.572024240800362*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"What", " ", "the", " ", "data", " ", "looks", " ", "like"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"triangle", "[", 
+   RowBox[{"[", "5", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.572024245969409*^9, 3.572024250503676*^9}, {
+  3.572024510492228*^9, 3.5720245124758377`*^9}, {3.572024557627907*^9, 
+  3.5720245613414183`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"20", ",", "4", ",", "82", ",", "47", ",", "65"}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.5720242479157352`*^9, 3.572024250825603*^9}, 
+   3.572024512672497*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"The", " ", "number", " ", "of", " ", "rows"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"nrows", "=", "15"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"The", " ", "number", " ", "of", " ", "routes"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nroutes", "=", 
+     RowBox[{"2", "^", 
+      RowBox[{"(", 
+       RowBox[{"nrows", "-", "1"}], ")"}]}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.57202447774063*^9, 3.5720244784262238`*^9}, {
+  3.572024547547882*^9, 3.572024551549131*^9}, {3.572024610270742*^9, 
+  3.572024639953064*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"There", " ", "are", " ", "not", " ", "many", " ", "routes"}], 
+    ",", " ", 
+    RowBox[{
+    "so", " ", "we", " ", "can", " ", "brute", " ", "force", " ", "the", " ", 
+     
+     RowBox[{"search", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"maxsum", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "0"}], ",", 
+     RowBox[{"i", "<", "nroutes"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "First", " ", "translate", " ", "the", " ", "number", " ", "to", " ", 
+       "binary"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"route", "=", 
+       RowBox[{"IntegerDigits", "[", 
+        RowBox[{"i", ",", "2", ",", "nrows"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"sum", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", "1"}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"j", "=", "1"}], ",", 
+         RowBox[{"j", "\[LessEqual]", "nrows"}], ",", 
+         RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"k", "+=", 
+           RowBox[{"route", "[", 
+            RowBox[{"[", "j", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"sum", "+=", 
+           RowBox[{"triangle", "[", 
+            RowBox[{"[", 
+             RowBox[{"j", ",", "k"}], "]"}], "]"}]}], ";"}]}], 
+        "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"sum", ">", "maxsum"}], ",", 
+         RowBox[{
+          RowBox[{"maxsum", "=", "sum"}], ";"}]}], "]"}]}]}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   "maxsum"}]}]], "Input",
+ CellChangeTimes->{{3.5720246586200657`*^9, 3.572024704799205*^9}, {
+  3.572024740161121*^9, 3.5720248473956337`*^9}, {3.572025081398637*^9, 
+  3.572025139655773*^9}, {3.572025181848691*^9, 3.572025218250115*^9}, {
+  3.5720252774980907`*^9, 3.5720253163793993`*^9}, {3.572025736816636*^9, 
+  3.572025752243761*^9}, {3.5720258071862593`*^9, 3.572025876428042*^9}, {
+  3.57202591859969*^9, 3.572025919687145*^9}}],
+
+Cell[BoxData["1074"], "Output",
+ CellChangeTimes->{{3.572025865992415*^9, 3.5720258734994707`*^9}, 
+   3.5720259215739594`*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{189, Automatic}, {38, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 470, 10, 88, "Input"],
+Cell[1030, 32, 343, 9, 50, "Input"],
+Cell[CellGroupData[{
+Cell[1398, 45, 402, 9, 50, "Input"],
+Cell[1803, 56, 203, 5, 30, "Output"]
+}, Open  ]],
+Cell[2021, 64, 703, 19, 107, "Input"],
+Cell[CellGroupData[{
+Cell[2749, 87, 2306, 56, 278, "Input"],
+Cell[5058, 145, 127, 2, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

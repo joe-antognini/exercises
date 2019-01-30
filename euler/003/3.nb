@@ -1,0 +1,106 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2867,         97]
+NotebookOptionsPosition[      2415,         76]
+NotebookOutlinePosition[      2753,         91]
+CellTagsIndexPosition[      2710,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "3"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"December", " ", "13", " ", "2012"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.564310590387331*^9, 3.564310623387382*^9}, 
+   3.564311344610935*^9, {3.5644287873352413`*^9, 3.564428788487336*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Test", " ", 
+    RowBox[{"case", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"FactorInteger", "[", "13195", "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "1"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.564428793964657*^9, 3.564428805619926*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "7", ",", "13", ",", "29"}], "}"}]], "Output",
+ CellChangeTimes->{3.564428806488728*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Solve", " ", "the", " ", 
+    RowBox[{"problem", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"TimeConstrained", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Max", "[", 
+     RowBox[{
+      RowBox[{"FactorInteger", "[", "600851475143", "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], ",", 
+    "\[IndentingNewLine]", "60"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.564428627657735*^9, 3.564428653036092*^9}, {
+  3.564428813093884*^9, 3.5644288161369343`*^9}, {3.564430413179379*^9, 
+  3.564430426922084*^9}}],
+
+Cell[BoxData["6857"], "Output",
+ CellChangeTimes->{3.564428654130453*^9, 3.564428817044138*^9, 
+  3.5644304282103853`*^9}]
+}, Open  ]]
+},
+WindowSize->{724, 508},
+WindowMargins->{{Automatic, 461}, {151, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 546, 11, 88, "Input"],
+Cell[CellGroupData[{
+Cell[1128, 35, 342, 9, 50, "Input"],
+Cell[1473, 46, 137, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1647, 54, 627, 15, 88, "Input"],
+Cell[2277, 71, 122, 2, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

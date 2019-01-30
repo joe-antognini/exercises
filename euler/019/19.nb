@@ -1,0 +1,108 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3305,         99]
+NotebookOptionsPosition[      2961,         82]
+NotebookOutlinePosition[      3297,         97]
+CellTagsIndexPosition[      3254,         94]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "19"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"April", " ", "2", " ", "2013"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.572023643211903*^9, 3.572023657953874*^9}, {
+  3.573929842188155*^9, 3.5739298477421083`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"date", "=", 
+   RowBox[{"DateString", "[", 
+    RowBox[{"{", 
+     RowBox[{"1901", ",", "1", ",", "1"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"firstsundays", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"While", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"DateString", "[", 
+      RowBox[{"date", ",", "\"\<Year\>\""}], "]"}], "\[NotEqual]", 
+     "\"\<2001\>\""}], ",", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DateString", "[", 
+         RowBox[{"date", ",", "\"\<DayName\>\""}], "]"}], "\[Equal]", 
+        "\"\<Sunday\>\""}], ",", 
+       RowBox[{"firstsundays", "+=", "1"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"date", "=", 
+      RowBox[{"DatePlus", "[", 
+       RowBox[{"date", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "\"\<Month\>\""}], "}"}]}], "]"}]}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", "firstsundays"}], "Input",
+ CellChangeTimes->{{3.57393064913059*^9, 3.573930705014*^9}, {
+   3.57393094157714*^9, 3.573930964428337*^9}, {3.573931043372759*^9, 
+   3.573931101770523*^9}, {3.573931178593768*^9, 3.573931179889985*^9}, 
+   3.573931258850868*^9, {3.573931443446871*^9, 3.573931446933683*^9}, {
+   3.5739316189998207`*^9, 3.5739316211411657`*^9}, {3.576532287137205*^9, 
+   3.576532293966228*^9}, 3.5765323315192947`*^9, {3.5765323685563297`*^9, 
+   3.576532381308506*^9}, {3.576532582766118*^9, 3.576532592575441*^9}}],
+
+Cell[BoxData["171"], "Output",
+ CellChangeTimes->{
+  3.573931102892806*^9, 3.573931180472558*^9, 3.573931260526498*^9, 
+   3.57393145590839*^9, 3.57393166699683*^9, 3.573931741697816*^9, 
+   3.573931830711443*^9, 3.576532303197637*^9, {3.576532348372464*^9, 
+   3.576532385350914*^9}, {3.5765325857545223`*^9, 3.576532596798362*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{Automatic, 118}, {1, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 520, 11, 88, "Input"],
+Cell[CellGroupData[{
+Cell[1102, 35, 1507, 37, 126, "Input"],
+Cell[2612, 74, 333, 5, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

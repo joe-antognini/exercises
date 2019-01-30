@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7188,        232]
+NotebookOptionsPosition[      6330,        198]
+NotebookOutlinePosition[      6668,        213]
+CellTagsIndexPosition[      6625,        210]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{
+   RowBox[{"Divisors", "[", "6", "]"}], "[", 
+   RowBox[{"[", 
+    RowBox[{";;", 
+     RowBox[{"-", "2"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5989808615928373`*^9, 3.5989808886422663`*^9}, {
+  3.598980919580998*^9, 3.5989809196436443`*^9}}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{{3.598980874372738*^9, 3.598980889042252*^9}, 
+   3.598980920349462*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"maxnum", "=", "28123"}], ";"}]], "Input",
+ CellChangeTimes->{{3.598981046863111*^9, 3.598981056410226*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"maxnum", "=", "2000"}], ";"}]], "Input",
+ CellChangeTimes->{{3.598981706621176*^9, 3.598981707068509*^9}, 
+   3.598981745276106*^9, {3.5989823623524446`*^9, 3.598982366447649*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"abundant", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"Range", "[", "maxnum", "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Total", "[", 
+        RowBox[{
+         RowBox[{"Divisors", "[", "#", "]"}], "[", 
+         RowBox[{"[", 
+          RowBox[{";;", 
+           RowBox[{"-", "2"}]}], "]"}], "]"}], "]"}], ">", "#"}], "&"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5989809497284327`*^9, 3.598980997227223*^9}, {
+  3.5989810525468283`*^9, 3.598981053200428*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<~/cs/euler/python/23.dat\>\"", ",", "abundant"}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.5989829780172997`*^9, 3.598982993206736*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"abundant", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.598981375985264*^9, 3.598981377276613*^9}}],
+
+Cell[BoxData["12"], "Output",
+ CellChangeTimes->{3.598981377745328*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "maxnum", "]"}], ","}]}]}]], "Input",
+ CellChangeTimes->{{3.59898117335738*^9, 3.598981181547265*^9}, {
+  3.59898129769293*^9, 3.598981306364211*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.598981442719029*^9, 3.5989814457220573`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cansum", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "maxnum"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"j", "=", "1"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"abundant", "[", 
+        RowBox[{"[", "j", "]"}], "]"}], "\[LessEqual]", 
+       RowBox[{"i", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"MemberQ", "[", 
+          RowBox[{"abundant", ",", 
+           RowBox[{"i", "-", 
+            RowBox[{"abundant", "[", 
+             RowBox[{"[", "j", "]"}], "]"}]}]}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"AppendTo", "[", 
+           RowBox[{"cansum", ",", "i"}], "]"}], ";", "Break"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"j", "+=", "1"}]}]}], "]"}]}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"Complement", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "maxnum", "]"}], ",", "cansum"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.598981035316752*^9, 3.5989810646512337`*^9}, {
+  3.598981104681484*^9, 3.598981114571128*^9}, {3.598981310444284*^9, 
+  3.59898147635752*^9}, {3.598981561918457*^9, 3.59898173969703*^9}, {
+  3.598982405870061*^9, 3.598982407531575*^9}}],
+
+Cell[BoxData["573153"], "Output",
+ CellChangeTimes->{3.598981741144472*^9, 3.5989817855715446`*^9, 
+  3.5989819398405933`*^9, 3.5989824442804613`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sums", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"i", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"abundant", "[", 
+     RowBox[{"[", "i", "]"}], "]"}], "\[LessEqual]", 
+    RowBox[{"maxnum", "/", "2"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"j", "=", "i"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"abundant", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], "+", 
+        RowBox[{"abundant", "[", 
+         RowBox[{"[", "j", "]"}], "]"}]}], "<", "maxnum"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"sums", ",", 
+         RowBox[{
+          RowBox[{"abundant", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "+", 
+          RowBox[{"abundant", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"j", "+=", "1"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"i", "+=", "1"}]}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sums", "=", 
+   RowBox[{"DeleteDuplicates", "[", "sums", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Total", "[", 
+  RowBox[{"Complement", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "maxnum", "]"}], ",", "sums"}], "]"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.598982003783545*^9, 3.5989821967024603`*^9}, {
+   3.598982242597886*^9, 3.598982271747538*^9}, {3.598982340468532*^9, 
+   3.5989823432500677`*^9}, 3.5989824603365*^9, {3.598982681069038*^9, 
+   3.5989826947204657`*^9}}],
+
+Cell[BoxData["575153"], "Output",
+ CellChangeTimes->{{3.598982332104673*^9, 3.598982385889428*^9}, 
+   3.5989824729980183`*^9, {3.598982682716856*^9, 3.5989827055937843`*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, -820}, {60, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 309, 8, 30, "Input"],
+Cell[891, 32, 120, 2, 30, "Output"]
+}, Open  ]],
+Cell[1026, 37, 142, 3, 30, "Input"],
+Cell[1171, 42, 215, 4, 30, "Input"],
+Cell[1389, 48, 542, 16, 30, "Input"],
+Cell[1934, 66, 210, 5, 30, "Input"],
+Cell[CellGroupData[{
+Cell[2169, 75, 150, 3, 30, "Input"],
+Cell[2322, 80, 71, 1, 30, "Output"]
+}, Open  ]],
+Cell[2408, 84, 261, 6, 50, "Input"],
+Cell[2672, 92, 94, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[2791, 97, 1473, 39, 145, "Input"],
+Cell[4267, 138, 150, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4454, 145, 1682, 46, 202, "Input"],
+Cell[6139, 193, 175, 2, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

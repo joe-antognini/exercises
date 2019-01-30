@@ -1,0 +1,137 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4266,        128]
+NotebookOptionsPosition[      3777,        106]
+NotebookOutlinePosition[      4113,        121]
+CellTagsIndexPosition[      4070,        118]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Project", " ", "Euler"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Problem", " ", "15"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Joe", " ", "Antognini"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"February", " ", "11", " ", "2013"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.569606418334936*^9, 3.5696064626124372`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"The", " ", 
+     RowBox[{"function", ".", "  ", "Each"}], " ", "path", " ", "can", " ", 
+     "be", " ", "represented", " ", "by", " ", "a", " ", "series", " ", "of", 
+     " ", 
+     RowBox[{"0", "'"}], "s", " ", "and", " ", 
+     RowBox[{"1", "'"}], "s"}], ",", " ", 
+    RowBox[{
+    "a", " ", "0", " ", "representing", " ", "a", " ", "move", " ", "down", 
+     " ", "and", " ", "a", " ", "1", " ", "representing", " ", "a", " ", 
+     "move", " ", 
+     RowBox[{"right", ".", "  ", "For"}], " ", "an", " ", "n", " ", "x", " ", 
+     "n", " ", "grid", " ", "2", "n", " ", "moves", " ", "are", " ", 
+     RowBox[{"required", " ", "--"}], " ", "n", " ", "moves", " ", "down", 
+     " ", "and", " ", "n", " ", "moves", " ", 
+     RowBox[{"right", ".", "  ", "Each"}], " ", "path", " ", "is", " ", 
+     "therefore", " ", "a", " ", "sequence", " ", "of", " ", "n", " ", 
+     RowBox[{"0", "'"}], "s", " ", "and", " ", "n", " ", 
+     RowBox[{"1", "'"}], 
+     RowBox[{"s", ".", "  ", "The"}], " ", "number", " ", "of", " ", "unique",
+      " ", "paths", " ", "is", " ", "the", " ", "number", " ", "of", " ", 
+     "permutations", " ", "of", " ", "a", " ", "list", " ", "of", " ", "n", 
+     " ", 
+     RowBox[{"0", "'"}], "s", " ", "and", " ", "n", " ", 
+     RowBox[{"1", "'"}], 
+     RowBox[{"s", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"calcPaths", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", "n"}], ")"}], "!"}], "/", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "!"}], ")"}], "^", "2"}]}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.569606701999069*^9, 3.5696067373036537`*^9}, {
+  3.56960698165691*^9, 3.569607074892501*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Test", " ", 
+    RowBox[{"case", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"calcPaths", "[", "2", "]"}]}]], "Input",
+ CellChangeTimes->{{3.56960647402108*^9, 3.569606498789398*^9}, {
+  3.569606649112608*^9, 3.5696066897211037`*^9}, {3.569607076636705*^9, 
+  3.569607081716164*^9}}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.569606655294026*^9, 3.569606690115135*^9, 
+  3.569607083605322*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"The", " ", 
+    RowBox[{"answer", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"calcPaths", "[", "20", "]"}]}]], "Input",
+ CellChangeTimes->{{3.569606692496969*^9, 3.5696066926437073`*^9}, {
+  3.569607085192938*^9, 3.56960710362429*^9}}],
+
+Cell[BoxData["137846528820"], "Output",
+ CellChangeTimes->{3.56960710402909*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 853},
+WindowMargins->{{75, Automatic}, {32, Automatic}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 475, 10, 88, "Input"],
+Cell[1035, 32, 1802, 40, 145, "Input"],
+Cell[CellGroupData[{
+Cell[2862, 76, 353, 8, 50, "Input"],
+Cell[3218, 86, 117, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3372, 93, 306, 7, 50, "Input"],
+Cell[3681, 102, 80, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

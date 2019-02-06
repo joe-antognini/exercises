@@ -2,6 +2,8 @@ import unittest
 
 from ..problem7 import Network
 from ..problem7 import SmallWorldNetwork
+from ..problem7 import find_all_path_lengths
+from ..problem7 import find_average_path_length
 from ..problem7 import find_path_lengths_from_node
 
 
@@ -49,3 +51,25 @@ class TestFindPathLengthsFromNode(unittest.TestCase):
         small_world_network = SmallWorldNetwork(L=20, Z=4, p=0.2)
         distances = find_path_lengths_from_node(small_world_network, 0)
         self.assertSetEqual(set(distances.keys()), set(range(1, 20))) 
+
+        small_world_network = SmallWorldNetwork(L=6, Z=1, p=0)
+        distances = find_path_lengths_from_node(small_world_network, 0)
+        self.assertEqual(max(distances.values()), 3)
+
+
+class TestFindAllPathLengths(unittest.TestCase):
+
+    def test_find_all_path_lengths(self):
+        graph = SmallWorldNetwork(L=20, Z=2, p=0)
+        all_distances = find_all_path_lengths(graph)
+        expected_keys = set((i, j) for i in range(20) for j in range(i+1, 20))
+        self.assertSetEqual(set(all_distances.keys()), expected_keys)
+
+
+class TestFindAveragePathLength(unittest.TestCase):
+
+    def test_find_average_path_length(self):
+        graph = SmallWorldNetwork(L=20, Z=2, p=0.2)
+        average_path_length = find_average_path_length(graph)
+        self.assertGreater(average_path_length, 0)
+        self.assertLess(average_path_length, 10)

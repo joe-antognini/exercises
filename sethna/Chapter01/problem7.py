@@ -95,19 +95,26 @@ def find_path_lengths_from_node(graph, node):
 
     """
     distances = {node: 0}
+    prev_shell = set()
     shell = set([node])
 
-    while set(distances.keys()) != graph.get_nodes():
+    while prev_shell != shell:
         next_shell = set()
         for n in shell:
             for neighbor in graph.get_neighbors(n):
                 if neighbor not in distances:
                     distances[neighbor] = distances[n] + 1
                     next_shell.add(neighbor)
+        prev_shell = shell
         shell = next_shell
 
     # Don't include the trivial zero-length path of a node to itself.
     del distances[node]
+
+    # Add "distances" for unconnected elements.
+    for elem in shell:
+        distances[elem] = np.inf
+
     return distances
 
 
